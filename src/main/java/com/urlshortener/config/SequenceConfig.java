@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SequenceConfig {
-
     private final JdbcTemplate jdbcTemplate;
 
     @Value("${app.instance-id}")
@@ -22,7 +21,8 @@ public class SequenceConfig {
 
     @PostConstruct
     public void configureSequence() {
-        jdbcTemplate.execute("CREATE SEQUENCE IF NOT EXISTS url_sequence START WITH " + instanceId + " INCREMENT BY " + totalInstances);
+        jdbcTemplate.execute("CREATE SEQUENCE IF NOT EXISTS url_sequence START WITH "
+                + instanceId + " INCREMENT BY " + totalInstances);
         jdbcTemplate.execute("ALTER SEQUENCE url_sequence RESTART WITH " +
                 getNextValidValue() + " INCREMENT BY " + totalInstances);
     }

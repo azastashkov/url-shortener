@@ -13,7 +13,6 @@ import java.util.Optional;
 
 @Service
 public class UrlService {
-
     private static final String BASE62 = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final String REDIS_PREFIX = "url:";
 
