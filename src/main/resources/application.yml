@@ -27,9 +27,6 @@ management:
       exposure:
         include: health,prometheus
   metrics:
-    distribution:
-      percentile-histogram:
-        http.server.requests: true
     tags:
       application: url-shortener
       instance: ${APP_INSTANCE_ID:1}
